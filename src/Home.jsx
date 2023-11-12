@@ -13,8 +13,8 @@ useEffect(()=>{
     <div>
         <h1>Welcome</h1>
         {
-            data ? data.map((article,index)=>(
-                <div key={index.id}>
+            data ? data.map((article)=>(
+                <div key={article.id}>
                 <p>Title:{article.title}</p>
                 <img src={article.urlToImage} alt={article.title}/>
                 </div>
