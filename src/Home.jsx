@@ -4,7 +4,7 @@ export default function Home() {
 const[data,setData] = useState([])
 
 useEffect(()=>{
-    fetch(" http://localhost:4000/bots")
+    fetch(" http://localhost:4001/articles")
     .then((Response)=> Response.json())
     .then((news)=> setData(news))
     .catch((error)=> console.error("Something is off",error))
@@ -15,8 +15,8 @@ useEffect(()=>{
         {
             data ? data.map((article,index)=>(
                 <div key={index.id}>
-                <p>Title:{article.name}</p>
-                <img src={article.avatar_url} alt={article.name}/>
+                <p>Title:{article.title}</p>
+                <img src={article.urlToImage} alt={article.title}/>
                 </div>
             )) : <p>Loading, please wait</p>
 
